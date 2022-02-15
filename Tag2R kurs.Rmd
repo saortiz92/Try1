@@ -1,0 +1,151 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+title: "Tag 2"
+output: html_notebook
+
+#Einführung in RMarkdown
+
+## Variable erstellen und ausführen
+
+```{r}
+age <- c(31,25,13,77)
+age
+```
+
+##Recap: Tag 1 (Tabelle)
+
+```{r}
+beruf <- c("Arzt", "Pflege", "Andere", "Arzt")
+indikation <- c("vor Patk", "vor asept", "nach inf", "nach Patk")
+tat <- c("Beatmung", "Manip. i.v./i.a. Zugänge", "Punktionen/Zugänge legen", "keine Angabe")
+desinf <- c("ja", "nein", "ja", "ja")
+
+sauber <- cbind(beruf, indikation, tat, desinf)
+View(sauber)
+```
+
+# Programieren:  Basics
+
+## Wahrheitswerte
+- True: 1
+- False: 0
+
+## Arithmetische Operatoren
+
+Modulus (returns reminder of division)
+"8 modulo 3" -> 8 %% 3
+
+```{r}
+17 %% 4
+```
+## Logische Operatoren
+AND (&), OR (|), NOT(!) XOR
+
+## Vergleichoperator (Comparison)
+<=; =>; <; >; ==; !=
+
+##Programieren: Vergleiche
+
+```{r comparisons}
+a <- 200
+b <- 33
+
+a == b
+```
+
+```{r}
+c <- c("Name", "Age", "Weight")
+d <- c("Name","Height", "Age")
+c != d
+```
+
+```{r}
+e <- c(20, 40, 30)
+f <- c(56, 40, 21)
+e <= f
+```
+
+```{r}
+g <- c(80, 55, 32)
+h <- c(79, 10, 21)
+g < h
+```
+
+```{r}
+ i <-  90
+k <- 67
+i >= k
+```
+
+
+##Programieren: Entscheidungsstruktur
+
+```{r Die Idee dahinter}
+if (FALSE) { #Logicals als Ergebnise der Prüfung
+  print("Stimmt so")
+} else {
+  print("nö")
+}
+```
+
+```{r}
+foo <- 22
+bar <- 22
+if (foo > bar) {
+  print("bigger than")
+} else{
+  print("foo equals bar")
+}
+```
+
+```{r mehrere Prüfungen}
+fred <-  35
+flarp <- 16
+if (fred > flarp) {
+  print("fred is bigger than flarp")
+} else if (fred == flarp) {
+  print("fred is equal to flarp")
+} else {
+  print("sth else")
+}
+```
+
+```{r versachteltes Statement }
+x <-  120
+if (x > 120) {
+  print("gr. 120")
+  if (x > 130) {
+    print("...und auch gr. 130")
+  } else {
+    print("... aber nicht gr. 130")
+ } 
+} else {
+  print("x ist kleiner gleich 120")
+}
+
+```
+## Entscheiden mit AND, OR
+
+```{r AND, }
+a <- 77
+b <- 27
+c <- 31
+
+if (a > b & a > c) {
+  print("alle wahr")
+}
+```
+```{r OR}
+a <- 77
+b <- 27
+c <- 31
+
+if (b > a | a > c) {
+  print("eines von beiden wahr")
+}
+```
+
